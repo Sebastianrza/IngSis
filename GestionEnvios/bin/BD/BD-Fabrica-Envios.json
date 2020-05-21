@@ -1,0 +1,12 @@
+{
+      "id": "en_01",
+      "usuario": "sebas",
+      "nombre": "envio",
+      "producto": "pastillas",
+      "compuesto": "acetaminofen",
+      "origen": "Fabrica",
+      "destino": "Almacen",
+      "cantidad": 10,
+      "estado": "aceptado"
+      
+}
