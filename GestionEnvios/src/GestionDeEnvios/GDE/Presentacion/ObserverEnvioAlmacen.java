@@ -12,5 +12,5 @@ public interface ObserverEnvioAlmacen {
 	void EnvioModificado(EnviosMap map, List<TransferEnvioMedico> TE, TransferEnvioMedico e);
 	void onReset(EnviosMap map, List<TransferEnvioMedico> TE);
 	void onRegister(EnviosMap map, List<TransferEnvioMedico> TE);
-	216
+	
 }

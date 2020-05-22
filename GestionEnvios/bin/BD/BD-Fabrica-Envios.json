@@ -1,12 +1,50 @@
 {
+  "array": [
+    {
       "id": "en_01",
       "usuario": "sebas",
       "nombre": "envio",
       "producto": "pastillas",
       "compuesto": "acetaminofen",
-      "origen": "Fabrica",
-      "destino": "Almacen",
       "cantidad": 10,
-      "estado": "aceptado"
-      
+      "estado": "pendiente"
+    },
+    {
+      "id": "null",
+      "usuario": "null",
+      "nombre": "null",
+      "producto": "null",
+      "compuesto": "null",
+      "cantidad": 0,
+      "estado": "null"
+    },
+    {
+      "id": "null",
+      "usuario": "null",
+      "nombre": "null",
+      "producto": "null",
+      "compuesto": "null",
+      "cantidad": 0,
+      "estado": "null"
+    },
+    {
+      "id": "null",
+      "usuario": "null",
+      "nombre": "null",
+      "producto": "null",
+      "compuesto": "null",
+      "cantidad": 0,
+      "estado": "null"
+    },
+    {
+      "id": "null",
+      "usuario": "null",
+      "nombre": "null",
+      "producto": "null",
+      "compuesto": "null",
+      "cantidad": 0,
+      "estado": "null"
+    }
+  ]
 }
+

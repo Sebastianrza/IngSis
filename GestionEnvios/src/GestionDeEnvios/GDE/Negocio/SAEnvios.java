@@ -6,12 +6,12 @@ public class SAEnvios {
 	
 	public void validarpedido(TransferEnvioFabrica envio) {
 		DaoEnvios en;
-		if(envio.getID_pedido_fabrica().containsKey("id")) {
+		/*if(envio.getID_pedido_fabrica().containsKey("id")) {
 			en = new DaoEnvios();
 			DaoEnvios.registrarenvio(envio);
 		}else {
 			
-		}
+		}*/
 		
 	}
 

@@ -36,7 +36,7 @@ public class EnvioFrame extends JFrame {
 		public EnvioFrame() {
 			setTitle("Env\u00EDos");
 			setBackground(new Color(255, 255, 153));
-			setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setBounds(100, 100, 651, 416);
 			contentPane = new JPanel();
 			contentPane.setBackground(new Color(255, 255, 153));
@@ -47,7 +47,7 @@ public class EnvioFrame extends JFrame {
 			JButton btnNewButton = new JButton("Listado de Env\u00EDos");
 			btnNewButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					ListadoEnvio verventana = new ListadoEnvio();
+					ListadoEnvio1 verventana = new ListadoEnvio1();
 					
 					verventana.show();
 				}
