@@ -16,8 +16,8 @@ public class TransferEnvioFabrica {
 	    protected List<TransferEnvioFabrica> lef = new ArrayList<>();
 	    
 	 
-	    public TransferEnvioFabrica(String type, String producto, String ID_Envio, String ID_Fabrica, String Destinatario, 
-	    		String Origen, int cantidad, StatusEnvio se){
+	    public TransferEnvioFabrica(/*String type, String producto, String ID_Envio, String ID_Fabrica, String Destinatario, 
+	    		String Origen, int cantidad, StatusEnvio se*/){
 	    	
 	    	this.type = type;
 	    	this.producto = producto;

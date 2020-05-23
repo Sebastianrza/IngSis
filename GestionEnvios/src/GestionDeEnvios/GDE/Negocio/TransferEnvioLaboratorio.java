@@ -11,8 +11,8 @@ public class TransferEnvioLaboratorio {
     protected StatusEnvio se;
     
  
-    public TransferEnvioLaboratorio(String ID_Envio, String ID_Lab, String Destinatario, 
-    		String Origen, int cantidad, StatusEnvio se){
+    public TransferEnvioLaboratorio(/*String ID_Envio, String ID_Lab, String Destinatario, 
+    		String Origen, int cantidad, StatusEnvio se*/){
     	this.ID_Envio = ID_Envio;
     	this.ID_Lab = ID_Lab;
     	this.Destinatario = Destinatario;

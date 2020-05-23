@@ -11,8 +11,8 @@ public class TransferEnvioAlmacen {
     protected StatusEnvio se;
     
  
-    public TransferEnvioAlmacen(String ID_Envio, String ID_Almacen, String Destinatario, 
-    		String Origen, int cantidad, StatusEnvio se){
+    public TransferEnvioAlmacen(/*String ID_Envio, String ID_Almacen, String Destinatario, 
+    		String Origen, int cantidad, StatusEnvio se*/){
     	this.ID_Envio = ID_Envio;
     	this.ID_Almacen = ID_Almacen;
     	this.Destinatario = Destinatario;

@@ -5,7 +5,6 @@ import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
 import GestionDeEnvios.GDE.Negocio.TransferEnvioAlmacen;
-import GestionDeEnvios.GDE.Negocio.TransferEnvioLaboratorio;
 
 public class EnvioAlmacenTableModel extends AbstractTableModel {
 
