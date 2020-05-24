@@ -3,20 +3,14 @@ package GestionDeEnvios.GDE.Negocio;
 public class TransferEnvioMedico {
 	
 	protected String ID_Envio;  
-	protected String ID_Medico; 
     protected String  Destinatario;  
     protected String Origen;
     protected int cantidad;
-    protected StatusEnvio se;
- 
-    public TransferEnvioMedico(String ID_Envio, String ID_Medico, String Destinatario, 
-    		String Origen, int cantidad, StatusEnvio se){
-    	this.ID_Envio = ID_Envio;
-    	this.ID_Medico = ID_Medico;
-    	this.Destinatario = Destinatario;
-    	this.Origen = Origen;
-    	this.cantidad = cantidad;
-    	this.se = se;
+    protected String compuesto;
+    protected String producto;
+    protected String se;
+    public TransferEnvioMedico(){
+    
     }
 	public String getID_Envio() {
 		return ID_Envio;
@@ -26,14 +20,19 @@ public class TransferEnvioMedico {
 		ID_Envio = iD_Envio;
 		}
 
-    public String getID_Medico() {
-		return ID_Medico;
-	}
 
-	public void setID_Medico(String iD_Medico) {
-		ID_Medico = iD_Medico;
+	public String getCompuesto() {
+		return compuesto;
 	}
-
+	public void setCompuesto(String compuesto) {
+		this.compuesto = compuesto;
+	}
+	public String getProducto() {
+		return producto;
+	}
+	public void setProducto(String producto) {
+		this.producto = producto;
+	}
 	public String getDestinatario() {
 		return Destinatario;
 	}
@@ -57,10 +56,10 @@ public class TransferEnvioMedico {
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
-	public StatusEnvio getSe() {
+	public String getSe() {
 		return se;
 	}
-	public void setSe(StatusEnvio se) {
+	public void setSe(String se) {
 		this.se = se;
 	}
 

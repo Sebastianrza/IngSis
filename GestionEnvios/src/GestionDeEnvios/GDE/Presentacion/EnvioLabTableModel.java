@@ -1,10 +1,13 @@
 package GestionDeEnvios.GDE.Presentacion;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
 
+import GestionDeEnvios.GDE.Integracion.DaoEnvios;
 import GestionDeEnvios.GDE.Negocio.TransferEnvioLaboratorio;
+import GestionDeEnvios.GDE.Negocio.TransferEnvioMedico;
 
 public class EnvioLabTableModel extends AbstractTableModel {
 
@@ -13,9 +16,16 @@ public class EnvioLabTableModel extends AbstractTableModel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private String[] _colNames = {"ID", "Producto","Origen","Destino", "Compuesto","Estado" };
+	private DaoEnvios dao = new DaoEnvios();
+	private TransferEnvioLaboratorio pedido = new TransferEnvioLaboratorio();
 	private List<TransferEnvioLaboratorio> EnvioLab;
 	public EnvioLabTableModel(ControladorEnvio _ctrl) {
-		EnvioLab=null;
+		try {
+			EnvioLab =dao.addPedidoLaboratorio(pedido);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		//_ctrl.addObserver(this);
 	}
 	@Override
@@ -40,8 +50,15 @@ public class EnvioLabTableModel extends AbstractTableModel {
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
-		// TODO Auto-generated method stub
-		return null;
+		switch(columnIndex) {
+		case 0: return EnvioLab.get(rowIndex).getID_Envio();
+		case 1: return EnvioLab.get(rowIndex).getProducto();
+		case 2:	return EnvioLab.get(rowIndex).getOrigen();
+		case 3:	return EnvioLab.get(rowIndex).getDestinatario();
+		case 4: return EnvioLab.get(rowIndex).getCompuesto();
+		case 5: return EnvioLab.get(rowIndex).getSe();
+		default: return false;
+		}		
 	}
 
 }

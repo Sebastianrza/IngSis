@@ -5,35 +5,19 @@ import java.util.List;
 
 public class TransferEnvioFabrica {
 	
-		protected String type;
-		protected String producto;
-		protected String ID_Envio;  
-		protected String ID_Fabrica; 
-	    protected String  Destinatario;  
-	    protected String Origen;
-	    protected int cantidad;
-	    protected StatusEnvio se;
-	    protected List<TransferEnvioFabrica> lef = new ArrayList<>();
+	protected String ID_Envio;  
+    protected String  Destinatario;  
+    protected String Origen;
+    protected int cantidad;
+    protected String compuesto;
+    protected String producto;
+    protected String se;
 	    
 	 
-	    public TransferEnvioFabrica(/*String type, String producto, String ID_Envio, String ID_Fabrica, String Destinatario, 
-	    		String Origen, int cantidad, StatusEnvio se*/){
-	    	
-	    	this.type = type;
-	    	this.producto = producto;
-	    	this.ID_Envio = ID_Envio;
-	    	this.ID_Fabrica = ID_Fabrica;
-	    	this.Destinatario = Destinatario;
-	    	this.Origen = Origen;
-	    	this.cantidad = cantidad;
-	    	this.se = se;
+	    public TransferEnvioFabrica(){
+	  
 	    }
-		public String getType() {
-			return type;
-		}
-		public void setType(String type) {
-			this.type = type;
-		}
+		
 		public String getProducto() {
 			return producto;
 		}
@@ -48,14 +32,6 @@ public class TransferEnvioFabrica {
 			ID_Envio = iD_Envio;
 			}
 	
-	    public String getID_Fabrica() {
-			return ID_Fabrica;
-		}
-
-		public void setID_Fabrica(String iD_Fabrica) {
-			ID_Fabrica = iD_Fabrica;
-		}
-
 		public String getDestinatario() {
 			return Destinatario;
 		}
@@ -79,11 +55,19 @@ public class TransferEnvioFabrica {
 		public void setCantidad(int cantidad) {
 			this.cantidad = cantidad;
 		}
-		public StatusEnvio getSe() {
+		public String getSe() {
 			return se;
 		}
-		public void setSe(StatusEnvio se) {
+		public void setSe(String se) {
 			this.se = se;
+		}
+
+		public String getCompuesto() {
+			return compuesto;
+		}
+
+		public void setCompuesto(String compuesto) {
+			this.compuesto = compuesto;
 		}
 	
 	

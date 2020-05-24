@@ -4,20 +4,15 @@ public class TransferEnvioLaboratorio {
 	
 	
 	protected String ID_Envio;  
-	protected String ID_Lab; 
     protected String  Destinatario;  
     protected String Origen;
     protected int cantidad;
-    protected StatusEnvio se;
-    
+    protected String compuesto;
+    protected String producto;
+    protected String se;
  
-    public TransferEnvioLaboratorio(/*String ID_Envio, String ID_Lab, String Destinatario, 
-    		String Origen, int cantidad, StatusEnvio se*/){
-    	this.ID_Envio = ID_Envio;
-    	this.ID_Lab = ID_Lab;
-    	this.Destinatario = Destinatario;
-    	this.Origen = Origen;
-    	this.cantidad = cantidad;
+    public TransferEnvioLaboratorio(){
+    
     }
 	public String getID_Envio() {
 		return ID_Envio;
@@ -27,13 +22,6 @@ public class TransferEnvioLaboratorio {
 		ID_Envio = iD_Envio;
 		}
 
-    public String getID_Lab() {
-		return ID_Lab;
-	}
-
-	public void setID_Lab(String iD_Lab) {
-		ID_Lab = iD_Lab;
-	}
 
 	public String getDestinatario() {
 		return Destinatario;
@@ -58,11 +46,23 @@ public class TransferEnvioLaboratorio {
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
-	public StatusEnvio getSe() {
+	public String getSe() {
 		return se;
 	}
-	public void setSe(StatusEnvio se) {
+	public void setSe(String se) {
 		this.se = se;
+	}
+	public String getCompuesto() {
+		return compuesto;
+	}
+	public void setCompuesto(String compuesto) {
+		this.compuesto = compuesto;
+	}
+	public String getProducto() {
+		return producto;
+	}
+	public void setProducto(String producto) {
+		this.producto = producto;
 	}
 
 }
