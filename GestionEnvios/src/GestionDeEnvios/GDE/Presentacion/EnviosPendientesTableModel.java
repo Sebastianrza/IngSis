@@ -8,40 +8,29 @@ import javax.swing.table.AbstractTableModel;
 
 import GestionDeEnvios.GDE.Integracion.DaoEnvios;
 import GestionDeEnvios.GDE.Negocio.TransferEnvioFabrica;
+import GestionDeEnvios.GDE.Negocio.TransferEnvioPendiente;
 
-
-
-public class EnvioFabricaTableModel extends AbstractTableModel /*implements ObserverEnvioFabrica */{
+public class EnviosPendientesTableModel extends AbstractTableModel{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String[] _colNames = {"ID", "Producto","Origen","Destino", "Compuesto","Estado" };
+
+	private String[] _colNames = {"ID", "Producto","Origen","Destino", "Compuesto", "Estado" };
 
 	DaoEnvios dao = new DaoEnvios();
-	TransferEnvioFabrica pedido = new TransferEnvioFabrica();
-	List<TransferEnvioFabrica> lista = new ArrayList<TransferEnvioFabrica>();
-	List<TransferEnvioFabrica> listaPendiente = new ArrayList<TransferEnvioFabrica>();
+	TransferEnvioPendiente pedido = new TransferEnvioPendiente();
+	List<TransferEnvioPendiente> lista = new ArrayList<TransferEnvioPendiente>();
 	
-	public EnvioFabricaTableModel(ControladorEnvio _ctrl) {
+	public EnviosPendientesTableModel(ControladorEnvio _ctrl) {
 		
 		try {
-			
-			lista = dao.addPedidoFabrica(pedido);
-			/*for(int i = 0; i<lista.size(); i++) {
-				if(lista.get(i).getSe().equals("pendiente") {
-					//listaPendiente.add(pedido);
-					lista.remove(pedido);
-				}else {
-				
-				}}*/
-			
-		} catch (FileNotFoundException e1) {
+			lista = dao.addPedidoPendiente(pedido);
+		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			e.printStackTrace();
 		}
-		
 		//_ctrl.addObserver(this);
 	}
 	@Override
@@ -58,16 +47,14 @@ public class EnvioFabricaTableModel extends AbstractTableModel /*implements Obse
 		return _colNames.length;
 	}
 
-
 	@Override
 	public int getRowCount() {
 		// TODO Auto-generated method stub
-		return lista.size();
+		return lista == null ? 0 : lista.size();
 	}
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
-
 		switch(columnIndex) {
 		case 0: return lista.get(rowIndex).getID_Envio();
 		case 1: return lista.get(rowIndex).getProducto();
@@ -77,8 +64,7 @@ public class EnvioFabricaTableModel extends AbstractTableModel /*implements Obse
 		case 5: return lista.get(rowIndex).getSe();
 		default: return false;
 		}		
+		
 	}
-	
-
 
 }

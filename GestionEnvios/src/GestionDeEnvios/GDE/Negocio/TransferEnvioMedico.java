@@ -1,6 +1,6 @@
 package GestionDeEnvios.GDE.Negocio;
 
-public class TransferEnvioMedico {
+public class TransferEnvioMedico extends TransferEnvio{
 	
 	protected String ID_Envio;  
     protected String  Destinatario;  

@@ -5,7 +5,7 @@ import GestionDeEnvios.GDE.Presentacion.EnvioPrincipial;
 
 import GestionDeEnvios.GDE.Presentacion.ListadoEnvio1;
 import GestionDeEnvios.GDE.Presentacion.ListadoPendiente;
-import GestionDeEnvios.GDE.Presentacion.ModificarEnvio;
+import GestionDeEnvios.GDE.Presentacion.ModificarEnvioAlmacen;
 
 public class VistasFact extends FactoriaVista{
 	
@@ -41,9 +41,9 @@ public class VistasFact extends FactoriaVista{
 	}
 
 	@Override
-	public ModificarEnvio EnvioModif() {
+	public ModificarEnvioAlmacen EnvioModif() {
 		// TODO Auto-generated method stub
-		return new ModificarEnvio();
+		return new ModificarEnvioAlmacen();
 	}
 
 }

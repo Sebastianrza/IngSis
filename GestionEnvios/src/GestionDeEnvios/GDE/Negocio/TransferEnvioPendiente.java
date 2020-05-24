@@ -1,11 +1,14 @@
 package GestionDeEnvios.GDE.Negocio;
 
-public class TransferEnvioLaboratorio extends TransferEnvio{
-	
-	
-    public TransferEnvioLaboratorio(){
+public class TransferEnvioPendiente extends TransferEnvio{
+
+
+   
+
+	public TransferEnvioPendiente(){
     
     }
+	
 	public String getID_Envio() {
 		return ID_Envio;
 	}
@@ -14,6 +17,7 @@ public class TransferEnvioLaboratorio extends TransferEnvio{
 		ID_Envio = iD_Envio;
 		}
 
+   
 
 	public String getDestinatario() {
 		return Destinatario;
@@ -44,17 +48,19 @@ public class TransferEnvioLaboratorio extends TransferEnvio{
 	public void setSe(String se) {
 		this.se = se;
 	}
-	public String getCompuesto() {
-		return compuesto;
-	}
-	public void setCompuesto(String compuesto) {
-		this.compuesto = compuesto;
-	}
-	public String getProducto() {
-		return producto;
-	}
-	public void setProducto(String producto) {
-		this.producto = producto;
-	}
+	 public String getCompuesto() {
+			return compuesto;
+		}
 
+		public void setCompuesto(String compuesto) {
+			this.compuesto = compuesto;
+		}
+
+		public String getProducto() {
+			return producto;
+		}
+
+		public void setProducto(String producto) {
+			this.producto = producto;
+		}
 }

@@ -6,16 +6,16 @@ public class EnvioPrincipial {
 	
 	SAEnvios aux;
 	EnvioFrame initframe;
-	ListadoEnvio1 initlistado;
+	ListadoEnvios initlistado;
 	ListadoPendiente initpendiente;
-	ModificarEnvio initmodificar;
+	ModificarEnvioAlmacen initmodificar;
 	ControladorEnvio enviocontrol;
 	
 	
 	public void init() {
 		this.aux = new SAEnvios();
 		this.initframe = new EnvioFrame();
-		this.initlistado = new ListadoEnvio1();
+		this.initlistado = new ListadoEnvios();
 		this.initpendiente = new ListadoPendiente();
 		this.enviocontrol = new ControladorEnvio();
 	}

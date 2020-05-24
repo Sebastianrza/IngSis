@@ -1,16 +1,8 @@
 package GestionDeEnvios.GDE.Negocio;
 
-public class TransferEnvioAlmacen {
+public class TransferEnvioAlmacen extends TransferEnvio {
 	
-	
-	protected String ID_Envio;  
-    protected String  Destinatario;  
-    protected String Origen;
-    protected int cantidad;
-    protected String compuesto;
-    protected String producto;
-    protected String se;
-    
+
  
    
 
