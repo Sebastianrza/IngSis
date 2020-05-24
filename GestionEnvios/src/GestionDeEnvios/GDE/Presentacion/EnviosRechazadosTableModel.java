@@ -6,6 +6,7 @@ import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
 import GestionDeEnvios.GDE.Integracion.DaoEnvios;
+import GestionDeEnvios.GDE.Negocio.TransferEnvio;
 import GestionDeEnvios.GDE.Negocio.TransferEnvioAlmacen;
 
 public class EnviosRechazadosTableModel extends AbstractTableModel{
@@ -13,8 +14,8 @@ public class EnviosRechazadosTableModel extends AbstractTableModel{
 	private static final long serialVersionUID = 1L;
 	private String[] _colNames = {"ID", "Producto","Origen","Destino", "Estado" };
 	private DaoEnvios dao = new DaoEnvios();
-	private TransferEnvioAlmacen pedido = new TransferEnvioAlmacen();
-	private List<TransferEnvioAlmacen> EnviosEliminados = new ArrayList<>();
+	private TransferEnvio pedido = new TransferEnvio();
+	private List<TransferEnvio> EnviosEliminados = new ArrayList<>();
 	public EnviosRechazadosTableModel() {
 		
 	}

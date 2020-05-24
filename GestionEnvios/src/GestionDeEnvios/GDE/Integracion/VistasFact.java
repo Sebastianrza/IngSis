@@ -3,7 +3,7 @@ package GestionDeEnvios.GDE.Integracion;
 import GestionDeEnvios.GDE.Presentacion.EnvioFrame;
 import GestionDeEnvios.GDE.Presentacion.EnvioPrincipial;
 
-import GestionDeEnvios.GDE.Presentacion.ListadoEnvio1;
+import GestionDeEnvios.GDE.Presentacion.ListadoEnvios;
 import GestionDeEnvios.GDE.Presentacion.ListadoPendiente;
 import GestionDeEnvios.GDE.Presentacion.ModificarEnvioAlmacen;
 
@@ -29,9 +29,9 @@ public class VistasFact extends FactoriaVista{
 	}
 
 	@Override
-	public ListadoEnvio1 EnvioList() {
+	public ListadoEnvios EnvioList() {
 		// TODO Auto-generated method stub
-		return new ListadoEnvio1();
+		return new ListadoEnvios();
 	}
 
 	@Override
