@@ -1,5 +1,7 @@
 package GestionDeEnvios.GDE.Integracion;
 
+import java.io.FileNotFoundException;
+
 import GestionDeEnvios.GDE.Presentacion.EnvioFrame;
 import GestionDeEnvios.GDE.Presentacion.EnvioPrincipial;
 
@@ -27,6 +29,6 @@ public abstract class FactoriaVista {
 
 	public abstract ListadoPendiente EnvioPendi();
 
-	public abstract ModificarEnvioAlmacen EnvioModif();
+	public abstract ModificarEnvioAlmacen EnvioModif() throws FileNotFoundException;
 
 }

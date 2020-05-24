@@ -104,8 +104,15 @@ public class ListadoEnvios extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ModificarEnvioFabrica mef = new ModificarEnvioFabrica();
-				mef.setVisible(true);
+				ModificarEnvioFabrica mef;
+				try {
+					mef = new ModificarEnvioFabrica();
+					mef.setVisible(true);
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
 				
 			}
 			
@@ -139,9 +146,16 @@ public class ListadoEnvios extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ModificarEnvioAlmacen mea = new ModificarEnvioAlmacen();
-				mea.setVisible(true);
-				
+				ModificarEnvioAlmacen mea;
+				try {
+					mea = new ModificarEnvioAlmacen();
+					mea.setVisible(true);
+					
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			
 			}
 			
 		});
@@ -174,8 +188,15 @@ public class ListadoEnvios extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ModificarEnvioLab melab = new ModificarEnvioLab();
-				melab.setVisible(true);
+				ModificarEnvioLab melab;
+				try {
+					melab = new ModificarEnvioLab();
+					melab.setVisible(true);
+					
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				
 			}
 			
@@ -207,8 +228,15 @@ public class ListadoEnvios extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ModificarEnvioMedico meme = new ModificarEnvioMedico();
-				meme.setVisible(true);
+				ModificarEnvioMedico meme;
+				try {
+					meme = new ModificarEnvioMedico();
+					meme.setVisible(true);
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
 				
 			}
 			

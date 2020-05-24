@@ -1,5 +1,6 @@
 package GestionDeEnvios.GDE.Presentacion;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,16 +9,22 @@ import javax.swing.table.AbstractTableModel;
 import GestionDeEnvios.GDE.Integracion.DaoEnvios;
 import GestionDeEnvios.GDE.Negocio.TransferEnvio;
 import GestionDeEnvios.GDE.Negocio.TransferEnvioAlmacen;
+import GestionDeEnvios.GDE.Negocio.TransferEnvioEliminado;
 
 public class EnviosRechazadosTableModel extends AbstractTableModel{
 	
 	private static final long serialVersionUID = 1L;
 	private String[] _colNames = {"ID", "Producto","Origen","Destino", "Estado" };
 	private DaoEnvios dao = new DaoEnvios();
-	private TransferEnvio pedido = new TransferEnvio();
-	private List<TransferEnvio> EnviosEliminados = new ArrayList<>();
-	public EnviosRechazadosTableModel() {
-		
+	private TransferEnvioEliminado pedido = new TransferEnvioEliminado();
+	private List<TransferEnvioEliminado> EnviosEliminados = new ArrayList<>();
+	public EnviosRechazadosTableModel(ControladorEnvio _ctrl) {
+		try {
+			EnviosEliminados = dao.PedidosRechazados(pedido);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@Override

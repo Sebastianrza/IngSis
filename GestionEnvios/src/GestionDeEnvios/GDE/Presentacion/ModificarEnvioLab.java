@@ -6,7 +6,11 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -17,9 +21,13 @@ import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
 
+import GestionDeEnvios.GDE.Integracion.DaoEnvios;
+import GestionDeEnvios.GDE.Negocio.TransferEnvioLaboratorio;
+import GestionDeEnvios.GDE.Negocio.TransferEnvioMedico;
+
 public class ModificarEnvioLab extends JFrame {
 	private JComboBox id;
-	//private DefaultComboBoxModel<String> identificadorModel;
+	private DefaultComboBoxModel<String> identificadorModel;
 	private JTextField producto;
 	private JTextField compuesto;
 	private JTextField origen;
@@ -29,7 +37,10 @@ public class ModificarEnvioLab extends JFrame {
 	private JComboBox estado;
 	//private DefaultComboBoxModel<String> estadoModel;
 	private JTextField textField;
+	private List<TransferEnvioLaboratorio> EnvioLab = new ArrayList<TransferEnvioLaboratorio>();
+	DaoEnvios dao = new DaoEnvios();
 	
+	TransferEnvioLaboratorio nuevoPedido = new TransferEnvioLaboratorio();
 
 	/**
 	 * Launch the application.
@@ -49,8 +60,16 @@ public class ModificarEnvioLab extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @throws IOException 
 	 */
-	public ModificarEnvioLab() {
+	public ModificarEnvioLab() throws IOException {
+		this.identificadorModel = new DefaultComboBoxModel<String>();
+		identificadorModel.removeAllElements();
+		EnvioLab = dao.addPedidoLaboratorio(nuevoPedido);
+		for ( int i = 0; i<EnvioLab.size(); i++) {
+			
+			identificadorModel.addElement(EnvioLab.get(i).getID_Envio());
+		}
 		setTitle("Modificar Envio Laboratorio");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 408);
@@ -71,15 +90,14 @@ public class ModificarEnvioLab extends JFrame {
 		getContentPane().add(panel_1, BorderLayout.CENTER);
 		panel_1.setLayout(null);
 		
-		
-		//id = new JComboBox<String>(identificadorModel);
-		/*id.setBounds(206, 11, 142, 29);
-		panel_1.add(id);*/
-		
 		JLabel lblIdentificador = new JLabel("Identificador");
-		lblIdentificador.setFont(new Font("Times New Roman", Font.PLAIN, 16));
-		lblIdentificador.setBounds(46, 18, 97, 14);
+		lblIdentificador.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+		lblIdentificador.setBounds(50, 22, 131, 31);
 		panel_1.add(lblIdentificador);
+		
+		id = new JComboBox<String>(identificadorModel);
+		id.setBounds(234, 11, 114, 29);
+		panel_1.add(id);
 		
 		JLabel lblProducto = new JLabel("Producto");
 		lblProducto.setFont(new Font("Times New Roman", Font.PLAIN, 16));

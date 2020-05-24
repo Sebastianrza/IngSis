@@ -1,5 +1,7 @@
 package GestionDeEnvios.GDE.Integracion;
 
+import java.io.FileNotFoundException;
+
 import GestionDeEnvios.GDE.Presentacion.EnvioFrame;
 import GestionDeEnvios.GDE.Presentacion.EnvioPrincipial;
 
@@ -41,9 +43,16 @@ public class VistasFact extends FactoriaVista{
 	}
 
 	@Override
-	public ModificarEnvioAlmacen EnvioModif() {
+	public ModificarEnvioAlmacen EnvioModif() throws FileNotFoundException {
 		// TODO Auto-generated method stub
-		return new ModificarEnvioAlmacen();
+		try {
+			return new ModificarEnvioAlmacen();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+		
 	}
 
 }

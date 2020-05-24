@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -14,6 +17,9 @@ import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
 
+import GestionDeEnvios.GDE.Integracion.DaoEnvios;
+import GestionDeEnvios.GDE.Negocio.TransferEnvioAlmacen;
+import GestionDeEnvios.GDE.Negocio.TransferEnvioMedico;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -22,7 +28,7 @@ import javax.swing.JComboBox;
 public class ModificarEnvioAlmacen extends JFrame{
 	
 	private JComboBox id;
-	//private DefaultComboBoxModel<String> identificadorModel;
+	private DefaultComboBoxModel<String> identificador;
 	private JTextField producto;
 	private JTextField compuesto;
 	private JTextField origen;
@@ -32,6 +38,10 @@ public class ModificarEnvioAlmacen extends JFrame{
 	private JComboBox estado;
 	//private DefaultComboBoxModel<String> estadoModel;
 	private JTextField textField;
+	private List<TransferEnvioAlmacen> EnvioAl = new ArrayList<TransferEnvioAlmacen>();
+	DaoEnvios dao = new DaoEnvios();
+	
+	TransferEnvioAlmacen nuevoPedido = new TransferEnvioAlmacen();
 
 	/**
 	 * Launch the application.
@@ -51,8 +61,16 @@ public class ModificarEnvioAlmacen extends JFrame{
 
 	/**
 	 * Create the frame.
+	 * @throws FileNotFoundException 
 	 */
-	public ModificarEnvioAlmacen() {
+	public ModificarEnvioAlmacen() throws FileNotFoundException {
+		this.identificador = new DefaultComboBoxModel<String>();
+		identificador.removeAllElements();
+		EnvioAl = dao.addPedidoAlmacen(nuevoPedido);
+		for ( int i = 0; i<EnvioAl.size(); i++) {
+			
+			identificador.addElement(EnvioAl.get(i).getID_Envio());
+		}
 		setTitle("Modificar Envio Almacen");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 408);
@@ -74,14 +92,14 @@ public class ModificarEnvioAlmacen extends JFrame{
 		panel_1.setLayout(null);
 		
 		
-		//id = new JComboBox<String>(identificadorModel);
-		/*id.setBounds(206, 11, 142, 29);
-		panel_1.add(id);*/
-		
 		JLabel lblIdentificador = new JLabel("Identificador");
-		lblIdentificador.setFont(new Font("Times New Roman", Font.PLAIN, 16));
-		lblIdentificador.setBounds(46, 18, 97, 14);
+		lblIdentificador.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+		lblIdentificador.setBounds(50, 22, 131, 31);
 		panel_1.add(lblIdentificador);
+		
+		id = new JComboBox<String>(identificador);
+		id.setBounds(234, 11, 114, 29);
+		panel_1.add(id);
 		
 		JLabel lblProducto = new JLabel("Producto");
 		lblProducto.setFont(new Font("Times New Roman", Font.PLAIN, 16));
@@ -134,11 +152,6 @@ public class ModificarEnvioAlmacen extends JFrame{
 		lblEstado.setBounds(52, 275, 91, 14);
 		panel_1.add(lblEstado);
 		
-		//estadoModel = new DefaultComboBoxModel<String>();
-		//estado = new JComboBox<String>(estadoModel);
-		/*estado.setBounds(206, 260, 142, 29);
-		panel_1.add(estado);*/
-		
 		textField = new JTextField();
 		textField.setColumns(10);
 		textField.setBounds(206, 52, 142, 20);
@@ -152,23 +165,19 @@ public class ModificarEnvioAlmacen extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+		
 				
-			/*	TransferPedidoImp nuevoPedido = new TransferPedidoImp();
-				
-				nuevoPedido.setType(type);
-				nuevoPedido.setIdPedido((String) identificador.getSelectedItem());
-				nuevoPedido.setUsuario("Gestor Fabrica");
-				nuevoPedido.setNombre(descripcion.getText());
-				nuevoPedido.setCompuesto("null");
+				nuevoPedido.setID_Envio((String) identificador.getSelectedItem());
+				nuevoPedido.setCompuesto(compuesto.getText());
 				nuevoPedido.setProducto(producto.getText());
 				nuevoPedido.setCantidad((int) cantidad.getValue());
-				nuevoPedido.setEstadoPedido((String) estado.getSelectedItem());
+				nuevoPedido.setSe((String) estado.getSelectedItem());
 				
-				controlador.modificaPedido(nuevoPedido);
+				//controlador.modificaPedido(nuevoPedido);
 				
-				VistaModificaPedido.this.dispose();*/
-			}
-		});
+				dispose();
+			
+			}});
 		panel_1.add(btnConfirmar);
 		
 		JButton btnCancelar = new JButton("Cancelar");

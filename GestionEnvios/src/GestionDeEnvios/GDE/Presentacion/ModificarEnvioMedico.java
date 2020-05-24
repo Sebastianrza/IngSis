@@ -6,7 +6,11 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -17,9 +21,13 @@ import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
 
+import GestionDeEnvios.GDE.Integracion.DaoEnvios;
+import GestionDeEnvios.GDE.Negocio.TransferEnvioMedico;
+
 public class ModificarEnvioMedico extends JFrame {
 	private JComboBox id;
-	//private DefaultComboBoxModel<String> identificadorModel;
+
+	private DefaultComboBoxModel<String> identificadorModel;
 	private JTextField producto;
 	private JTextField compuesto;
 	private JTextField origen;
@@ -27,9 +35,11 @@ public class ModificarEnvioMedico extends JFrame {
 	private JSpinner cantidad;
 	private JPanel contentPane;
 	private JComboBox estado;
-	//private DefaultComboBoxModel<String> estadoModel;
 	private JTextField textField;
+	private List<TransferEnvioMedico> EnvioMe = new ArrayList<TransferEnvioMedico>();
+	DaoEnvios dao = new DaoEnvios();
 	
+	TransferEnvioMedico nuevoPedido = new TransferEnvioMedico();
 
 	/**
 	 * Launch the application.
@@ -49,8 +59,16 @@ public class ModificarEnvioMedico extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @throws FileNotFoundException 
 	 */
-	public ModificarEnvioMedico() {
+	public ModificarEnvioMedico() throws FileNotFoundException {
+		this.identificadorModel = new DefaultComboBoxModel<String>();
+		identificadorModel.removeAllElements();
+		EnvioMe = dao.addPedidoMedico(nuevoPedido);
+		for ( int i = 0; i<EnvioMe.size(); i++) {
+			
+			identificadorModel.addElement(EnvioMe.get(i).getID_Envio());
+		}
 		setTitle("Modificar Envio Medico");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 408);
@@ -72,22 +90,23 @@ public class ModificarEnvioMedico extends JFrame {
 		panel_1.setLayout(null);
 		
 		
-		//id = new JComboBox<String>(identificadorModel);
-		/*id.setBounds(206, 11, 142, 29);
-		panel_1.add(id);*/
-		
 		JLabel lblIdentificador = new JLabel("Identificador");
-		lblIdentificador.setFont(new Font("Times New Roman", Font.PLAIN, 16));
-		lblIdentificador.setBounds(46, 18, 97, 14);
+		lblIdentificador.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+		lblIdentificador.setBounds(50, 22, 131, 31);
 		panel_1.add(lblIdentificador);
+		
+		id = new JComboBox<String>(identificadorModel);
+		id.setBounds(206, 22, 142, 29);
+		panel_1.add(id);
 		
 		JLabel lblProducto = new JLabel("Producto");
 		lblProducto.setFont(new Font("Times New Roman", Font.PLAIN, 16));
-		lblProducto.setBounds(46, 53, 82, 14);
+		lblProducto.setBounds(50, 64, 82, 14);
 		panel_1.add(lblProducto);
 		
 		producto = new JTextField();
-		producto.setBounds(206, 84, 142, 20);
+		producto.setEditable(false);
+		producto.setBounds(206, 89, 142, 20);
 		panel_1.add(producto);
 		producto.setColumns(10);
 		
@@ -108,13 +127,13 @@ public class ModificarEnvioMedico extends JFrame {
 		
 		origen = new JTextField();
 		origen.setEditable(false);
-		origen.setBounds(206, 121, 142, 20);
+		origen.setBounds(206, 132, 142, 20);
 		panel_1.add(origen);
 		origen.setColumns(10);
 		
 		JLabel lbldestino = new JLabel("Destino");
 		lbldestino.setFont(new Font("Times New Roman", Font.PLAIN, 16));
-		lbldestino.setBounds(46, 127, 82, 14);
+		lbldestino.setBounds(50, 133, 82, 14);
 		panel_1.add(lbldestino);
 		
 		JLabel lblCantidad = new JLabel("Cantidad");
@@ -124,7 +143,7 @@ public class ModificarEnvioMedico extends JFrame {
 		
 		cantidad = new JSpinner();
 		cantidad.setModel(new SpinnerNumberModel(1, 1, 100, 1));
-		cantidad.setBounds(206, 210, 142, 24);
+		cantidad.setBounds(206, 217, 142, 24);
 		panel_1.add(cantidad);
 		
 		JLabel lblEstado = new JLabel("Estado");
@@ -139,7 +158,7 @@ public class ModificarEnvioMedico extends JFrame {
 		
 		textField = new JTextField();
 		textField.setColumns(10);
-		textField.setBounds(206, 52, 142, 20);
+		textField.setBounds(206, 63, 142, 20);
 		panel_1.add(textField);
 		
 		JButton btnConfirmar = new JButton("Guardar");
