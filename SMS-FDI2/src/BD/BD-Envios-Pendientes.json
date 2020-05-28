@@ -1,0 +1,44 @@
+{
+  "array": [
+    {
+      "id": "fa_05",
+      "origen": "fabrica",
+      "destinatario": "laboratorio",
+      "producto": "pastillas",
+      "descripcion": "Pruebas",
+      "compuesto": "acetaminofen",
+      "cantidad": 10,
+      "estado": "pendiente"
+    },
+    {
+      "id": "al_08",
+      "origen": "almacen",
+      "destinatario": "fabrica",
+      "producto": "pastillas",
+      "descripcion": "Pruebas",
+      "compuesto": "Antibiotico",
+      "cantidad": 12,
+      "estado": "pendiente"
+    },
+    {
+     "id": "me_09",
+      "origen": "medico",
+      "destinatario": "fabrica",
+      "producto": "pastillas",
+      "compuesto": "Pruebas-covid",
+      "descripcion": "Pruebas",
+      "cantidad": 10,
+      "estado": "pendiente"
+    },
+    {
+      "id": "fa_20",
+      "origen": "fabrica",
+      "destinatario": "almacen",
+      "descripcion": "Pruebas",
+      "producto": "pastillas",
+      "compuesto": "antialergico",
+      "cantidad": 100,
+      "estado": "pendiente"
+    }
+  ]
+}

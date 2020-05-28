@@ -1,0 +1,50 @@
+{
+  "array": [
+    {
+      "id": "lab_01",
+      "nombre": "envio",
+      "origen": "laboratorio",
+      "destinatario": "fabrica",
+      "producto": "pastillas",
+      "descripcion": "Muestras",
+      "compuesto": "acetaminofen",
+      "cantidad": 10,
+      "estado": "transito"
+    },
+    {
+      "id": "lab_02",
+      "nombre": "envio",
+      "origen": "laboratorio",
+      "destinatario": "medico",
+      "descripcion": "fase beta muestra",
+      "producto": "pastillas",
+      "compuesto": "Antibiotico",
+      "cantidad": 12,
+      "estado": "entregado"
+    },
+    {
+     "id": "lab_03",
+      "nombre": "envio",
+      "origen": "laboratorio",
+      "descripcion": "lanzamiento",
+      "destinatario": "fabrica",
+      "producto": "pastillas",
+      "compuesto": "Pruebas-covid",
+      "cantidad": 10,
+      "estado": "transito"
+    },
+    {
+      "id": "lab_05",
+      "nombre": "envio",
+      "origen": "laboratorio",
+      "descripcion": "nuevo stock",
+      "destinatario": "medico",
+      "producto": "pastillas",
+      "compuesto": "antialergico",
+      "cantidad": 100,
+      "estado": "aceptado"
+    }
+  ]
+}
+
+

@@ -1,0 +1,44 @@
+{
+  "array": [
+    {
+      "id": "lab_20",
+      "origen": "laboratorio",
+      "destinatario": "almacen",
+      "producto": "pastillas",
+      "descripcion": "Pruebas",
+      "compuesto": "acetaminofen",
+      "cantidad": 10,
+      "estado": "Rechazado"
+    },
+    {
+      "id": "lab_21",
+      "origen": "laboratorio",
+      "destinatario": "fabrica",
+      "producto": "Remedio",
+      "descripcion": "Pruebas",
+      "compuesto": "Antibiotico",
+      "cantidad": 12,
+      "estado": "Rechazado"
+    },
+    {
+     "id": "al_100",
+      "origen": "almacen",
+      "destinatario": "fabrica",
+      "producto": "tableta",
+      "descripcion": "Pruebas",
+      "compuesto": "Pruebas-covid",
+      "cantidad": 10,
+      "estado": "rechazado"
+    },
+    {
+      "id": "me_50",
+      "origen": "medico",
+      "destinatario": "almacen",
+      "producto": "pastillas",
+      "descripcion": "Pruebas",
+      "compuesto": "antialergico",
+      "cantidad": 100,
+      "estado": "rechazado"
+    }
+  ]
+}
