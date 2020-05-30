@@ -8,6 +8,7 @@ import javax.swing.table.AbstractTableModel;
 import GestionDeEnvios.GDE.Integracion.DaoEnvios;
 import GestionDeEnvios.GDE.Negocio.TransferEnvioEliminado;
 
+
 public class EnviosRechazadosTableModel extends AbstractTableModel{
 	
 	private static final long serialVersionUID = 1L;
@@ -40,6 +41,8 @@ public class EnviosRechazadosTableModel extends AbstractTableModel{
 		// TODO Auto-generated method stub
 		return EnviosEliminados== null ? 0 : EnviosEliminados.size();
 	}
+	
+
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {

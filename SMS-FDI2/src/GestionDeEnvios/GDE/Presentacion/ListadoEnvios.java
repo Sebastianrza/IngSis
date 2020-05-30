@@ -12,6 +12,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 
@@ -83,6 +84,19 @@ public class ListadoEnvios extends JFrame {
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
+		JButton refresh = new JButton();
+		refresh.setBounds(201, 30, 35, 30);
+		panel_1.add(refresh);
+		refresh.setIcon(new ImageIcon("src/actualizar.png")); 
+		refresh.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				ListadoEnvios en = new ListadoEnvios();
+				en.setVisible(true);
+				
+			}});
 		JButton btnEliminar_3 = new JButton("Eliminar");
 		btnEliminar_3.setBounds(69, 65, 99, 25);
 		panel_1.add(btnEliminar_3);
@@ -181,6 +195,7 @@ public class ListadoEnvios extends JFrame {
 		
 		JButton btnNewButton = new JButton("Modificar");
 		btnNewButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				ModificarEnvioFabrica mof = new ModificarEnvioFabrica();
 				mof.setVisible(true);
@@ -188,6 +203,9 @@ public class ListadoEnvios extends JFrame {
 		});
 		btnNewButton.setBounds(69, 28, 99, 25);
 		panel_1.add(btnNewButton);
+		
+		
+		
 		btnEliminar_2.addActionListener(new ActionListener() {
 
 			@Override
@@ -199,6 +217,7 @@ public class ListadoEnvios extends JFrame {
 			}
 			
 		});
+		
 		
 		
 		
@@ -217,4 +236,5 @@ public class ListadoEnvios extends JFrame {
 		p.add(new JScrollPane(c));
 		return p;
 	}
+	
 }

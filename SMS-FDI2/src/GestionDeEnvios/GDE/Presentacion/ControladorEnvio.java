@@ -1,7 +1,5 @@
 package GestionDeEnvios.GDE.Presentacion;
 
-import java.io.IOException;
-
 import GestionDeEnvios.GDE.Integracion.FactoriaVista;
 import GestionDeEnvios.GDE.Integracion.VistasFact;
 import GestionDeEnvios.GDE.Negocio.SAEnvios;

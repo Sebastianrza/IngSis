@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
 public class EnvioFrame extends JFrame {
@@ -20,21 +21,7 @@ public class EnvioFrame extends JFrame {
 		public void setCtrl(ControladorEnvio ctrl) {
 			this.ctrl = ctrl;
 		}
-		
-	
-		public void main() {
-			EventQueue.invokeLater(new Runnable() {
-				@Override
-				public void run() {
-					try {
-						EnvioFrame frame = new EnvioFrame();
-						frame.setVisible(true);
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				}
-			});
-		}
+
 
 		/**
 		 * Create the frame.
@@ -43,7 +30,7 @@ public class EnvioFrame extends JFrame {
 			
 			setTitle("Env\u00EDos");
 			setBackground(new Color(255, 255, 153));
-			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 			setBounds(100, 100, 651, 416);
 			contentPane = new JPanel();
 			contentPane.setBackground(new Color(255, 255, 153));
@@ -109,6 +96,40 @@ public class EnvioFrame extends JFrame {
 		
 			contentPane.add(btnNewButton_2);
 			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		public void main() {
+			EventQueue.invokeLater(new Runnable() {
+				@Override
+				public void run() {
+					try {
+						EnvioFrame frame = new EnvioFrame();
+						frame.setVisible(true);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			});
 		}
 	}
 

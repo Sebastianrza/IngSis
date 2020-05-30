@@ -431,7 +431,7 @@ public List<TransferEnvioEliminado> PedidosRechazados(TransferEnvioEliminado ped
 				pedido.setDescripcion(rs.getString("Descripcion"));
 				pedido.setCompuesto(rs.getString("Compuesto"));
 				pedido.setCantidad(rs.getString("Cantidad"));
-				pedido.setSe(rs.getString("Estado Envio"));
+				pedido.setSe(rs.getString("Estado"));
 				EnvioAlm.add(pedido);
 				
 				
@@ -498,7 +498,7 @@ public List<TransferEnvioEliminado> PedidosRechazados(TransferEnvioEliminado ped
 				pedido.setDescripcion(rs.getString("Descripcion"));
 				pedido.setCompuesto(rs.getString("Compuesto"));
 				pedido.setCantidad((rs.getString("Cantidad")));
-				pedido.setSe(rs.getString("Estado Envio"));
+				pedido.setSe(rs.getString("Estado"));
 				EnvioLabo.add(pedido);
 				
 			}
@@ -530,7 +530,7 @@ public List<TransferEnvioEliminado> PedidosRechazados(TransferEnvioEliminado ped
 				pedido.setDescripcion(rs.getString("Descripcion"));
 				pedido.setCompuesto(rs.getString("Compuesto"));
 				pedido.setCantidad((rs.getString("Cantidad")));
-				pedido.setSe(rs.getString("Estado Envio"));
+				pedido.setSe(rs.getString("Estado"));
 				EnvioMed.add(pedido);
 				
 			}
@@ -721,7 +721,7 @@ public List<TransferEnvioEliminado> PedidosRechazados(TransferEnvioEliminado ped
 		Conexion conex= new Conexion();
 		try{
 			
-			String query="UPDATE AlmacenEnviosPedidos SET ID_Pedido= ? ,Origen = ? , Destino =? , Descripcion =? , Compuesto = ?, Cantidad = ?, Estado Envio=? WHERE ID_Pedido=?";
+			String query="UPDATE AlmacenEnviosPedidos SET ID_Pedido= ? ,Origen = ? , Destino =? , Descripcion =? , Compuesto = ?, Cantidad = ?, Estado=? WHERE ID_Pedido=?";
 			PreparedStatement statement = conex.getConnection().prepareStatement(query);
 			
             statement.setString(1, pedido.getID_Envio());
@@ -733,7 +733,7 @@ public List<TransferEnvioEliminado> PedidosRechazados(TransferEnvioEliminado ped
             statement.setString(7, pedido.getSe());
             statement.setString(8, pedido.getID_Envio());
             statement.executeUpdate();
-
+            
           JOptionPane.showMessageDialog(null, " Se ha Modificado Correctamente ","Confirmaci�n",JOptionPane.INFORMATION_MESSAGE);
          
 
@@ -778,7 +778,7 @@ public List<TransferEnvioEliminado> PedidosRechazados(TransferEnvioEliminado ped
 		Conexion conex= new Conexion();
 		try{
 			
-			String query="UPDATE MedicosEnviosPedidos SET ID_Pedido= ? ,Origen = ? , Destino =? , Descripcion =? , Compuesto = ?, Cantidad = ?, Estado Envio=? WHERE ID_Pedido=? ";
+			String query="UPDATE MedicosEnviosPedidos SET ID_Pedido= ? ,Origen = ? , Destino =? , Descripcion =? , Compuesto = ?, Cantidad = ?, Estado=? WHERE ID_Pedido=? ";
 			PreparedStatement statement = conex.getConnection().prepareStatement(query);
 			
 			statement.setString(1, pedido.getID_Envio());
@@ -807,7 +807,7 @@ public List<TransferEnvioEliminado> PedidosRechazados(TransferEnvioEliminado ped
 		Conexion conex= new Conexion();
 		try{
 			
-			String query="UPDATE LaboratorioEnviosPedidos SET ID_Pedido= ? ,Origen = ? , Destino =? , Descripcion =? , Compuesto = ?, Cantidad = ?, Estado Envio=? WHERE ID_Pedido= ?";
+			String query="UPDATE LaboratorioEnviosPedidos SET ID_Pedido= ? ,Origen = ? , Destino =? , Descripcion =? , Compuesto = ?, Cantidad = ?, Estado=? WHERE ID_Pedido= ?";
 			PreparedStatement statement = conex.getConnection().prepareStatement(query);
 			
 			statement.setString(1, pedido.getID_Envio());
